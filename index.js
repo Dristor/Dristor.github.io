@@ -13,7 +13,22 @@ function main() {
 }
 
 function intro() {
+  document.querySelector("#contact").onclick = () => {
+    if(document.querySelector('#contact_details').style.visibility=="visible") {
 
+      document.querySelector('#contact_details').style.opacity="0%";
+      document.querySelector('#contact_details').style.transform="translateX(10%)";
+      setTimeout(()=>{
+        document.querySelector('#contact_details').style.visibility="hidden";
+      },300);
+
+    }
+    else {
+            document.querySelector('#contact_details').style.visibility="visible";
+            document.querySelector('#contact_details').style.transform="translateX(-10%)";
+            document.querySelector('#contact_details').style.opacity="100%";
+    }
+  }
   width = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
   console.log(width);
   window.onresize = () => {onResize()};
