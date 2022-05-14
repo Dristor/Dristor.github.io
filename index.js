@@ -92,13 +92,15 @@ function intro() {
 
 function onResize() {
   width = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
-  carouselWidth = document.querySelector('#carousel').scrollWidth;
+  carouselWidth = document.querySelector('#carousel').offsetWidth;
   console.log(carouselWidth);
   console.log(document.querySelector('#carousel'));
   carouselItemWidth = carouselWidth/carouselItems.length;
   let carouselCenter = width/2 - ((initialSelected*carouselItemWidth)+carouselItemWidth/2);
   document.querySelector('#carousel').style.left = carouselCenter+"px";
 }
+
+
 function moveLeft() {
   if(selected-1 >= 0){
     let carousel = document.querySelector('#carousel');
